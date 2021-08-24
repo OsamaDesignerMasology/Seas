@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.84.0" />
+    <title>Navbar Template · Bootstrap v5.0</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/navbars/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      html {
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .footer-para a:hover {
+        color: #fff;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      .color-seegreen {
+        color: #00ffae !important;
+      }
+      .footer-para li {
+        list-style-type: none;
+        padding: 3px 0px;
+      }
+      .color-white {
+        color: #fff !important;
+      }
+      .footer-head {
+        font-size: 1rem;
+      }
+
+      .footer-para {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .topbar-green {
+        height: 60px;
+        background-image: linear-gradient(to right, #06307b, #01754d);
+      }
+      .bottombar-green {
+        height: 60px;
+        background-image: linear-gradient(to right, #06307b, #01754d);
+      }
+
+      .header-logo {
+        height: 125px;
+        margin-top: -65px;
+      }
+      .footer-logo2 {
+        height: 60px;
+      }
+
+      .nav-link {
+        color: #000 !important;
+        font-weight: 500 !important;
+      }
+
+      .nav-item {
+        align-self: center;
+      }
+      .navbar-custom {
+        background-color: #fff;
+      }
+      .linear-gradient {
+        background-image: linear-gradient(to right, #06307b, #01754d);
+      }
+      .footer-bg {
+        background: url(./assets/img/footer-bg.png);
+        background-size: cover;
+        margin-top: 100px;
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 991px) {
+        .mobile-text-left {
+          text-align: left !important;
+        }
+        .d-none-mobile {
+          display: none !important;
+        }
+        .topbar-green {
+          display: none;
+        }
+        .navbar-custom {
+          background-image: linear-gradient(to right, #06307b, #01754d);
+        }
+        .nav-link {
+          color: #fff !important;
+        }
+        .mobile-logo {
+          height: 55px;
+        }
+      }
+      @media screen and (min-width: 992px) and (max-width: 5000px) {
+        .d-none-desktop {
+          display: none !important;
+        }
+        .nav-link {
+          padding-right: 1rem !important;
+          padding-left: 1rem !important;
+        }
+      }
+      .menu-ico {
+        height: 25px;
+      }
+      .footer-frame {
+        background: url(./assets/img/footer-frame.png);
+        background-size: cover;
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .video-btn {
+        background: none !important;
+        border: none !important;
+      }
+      .footer-bottom-p {
+        font-weight: 500 !important;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="row m-0">
+      <div class="col p-0">
+        <div class="topbar-green"></div>
+      </div>
+    </div>
+    <nav
+      class="navbar navbar-expand-lg navbar-custom"
+      aria-label="Tenth navbar example"
+    >
+      <div class="container-fluid">
+        <a class="nav-link d-none-desktop" href="#"
+          ><img class="mobile-logo" src="./assets//img/logo.png"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample08"
+          aria-controls="navbarsExample08"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"
+            ><img class="menu-ico" src="./assets/img/menu.png"
+          /></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-md-center"
+          id="navbarsExample08"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CURRICULUM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">STUDENT LIFE</a>
+            </li>
+            <li class="nav-item d-none-mobile">
+              <a class="nav-link" href="#"
+                ><img class="header-logo" src="./assets//img/logo.png"
+              /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ADMISSIONS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">GIVING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PARENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT US</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown08">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <footer class="linear-gradient footer-bg">
+      <!-- <div class="bottombar-green text-center"></div> -->
+      <div class="row">
+        <div class="col text-center">
+          <a class="nav-link d-none-mobile" href="#"
+            ><img class="header-logo" src="./assets//img/footer-logo.png"
+          /></a>
+          <a class="nav-link d-none-desktop text-start" href="#"
+            ><img class="footer-logo2" src="./assets//img/logo.png"
+          /></a>
+        </div>
+      </div>
+      <div class="row m-0 mt-5 pb-5">
+        <div class="col p-0">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col col-lg-3 col-12">
+                <h4 class="color-seegreen footer-head mb-4">
+                  ADDRESS & CONTACT
+                </h4>
+                <p class="footer-para color-white">
+                  2901 E. HUFFMAN ROAD ANCHORAGE, ALASKA 99516
+                </p>
+                <p class="footer-para color-white">
+                  <i class="fa fa-phone color-seegreen"></i> &nbsp;&nbsp;(907)
+                  345-3712
+                </p>
+                <p class="footer-para color-white">
+                  <i class="fa fa-envelope color-seegreen"></i>
+                  &nbsp;&nbsp;info@akseas.com
+                </p>
+              </div>
+
+              <div class="col col-lg-3 col-12">
+                <h4 class="color-seegreen footer-head mb-4">QUICK LINKS</h4>
+                <ul class="footer-para color-white p-0">
+                  <li><a href="#">HOME</a></li>
+                  <li><a href="#">ABOUT US</a></li>
+                  <li><a href="#">CURRICULUM</a></li>
+                  <li><a href="#">STUDENT LIFE</a></li>
+                  <li><a href="#">ADMISSIONS</a></li>
+                  <li><a href="#">GIVING</a></li>
+                  <li><a href="#">PARENTS</a></li>
+                  <li><a href="#">CONTACT US</a></li>
+                </ul>
+              </div>
+              <div class="col col-lg-3 col-12">
+                <h4 class="color-seegreen footer-head mb-4">UPCOMING EVENTS</h4>
+                <p class="footer-para color-white">
+                  AUG.19-FIRST DAY OF SCHOOL
+                </p>
+                <p class="footer-para color-white">AUG.25-ALL SCHOOL PICTURE</p>
+                <p class="footer-para color-white">
+                  SEPT.1-FIRST DAY OF SCHOOL
+                </p>
+                <p class="footer-para color-white">
+                  AUG.19-FIRST DAY OF SCHOOL
+                </p>
+              </div>
+              <div class="col col-lg-3 col-12">
+                <h4 class="color-seegreen footer-head mb-4">TAKE A TOUR</h4>
+                <div class="footer-frame">
+                  <button class="video-btn mt-3">
+                    <img src="./assets/img/play.png" /><br />
+                    <p class="color-white">Play</p></button
+                  ><br />
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col col-lg-4 col-12">
+                <p class="color-seegreen footer-bottom-p">
+                  <span class="color-white">&copy 2021</span> SAINT ELIZABETH
+                  ANN SETON SCHOOL
+                </p>
+              </div>
+              <div class="col col-lg-4 col-12 text-center mobile-text-left">
+                <i class="fa fa-facebook color-white"></i>
+              </div>
+              <div class="col col-lg-4 col-12 text-end mobile-text-left">
+                <p class="color-white footer-bottom-p">
+                  IKONIC PUBLIC RELATIONS, LLC
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
