@@ -9,7 +9,7 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.84.0" />
-    <title>Navbar Template · Bootstrap v5.0</title>
+    <title>Seas</title>
 
     <link
       rel="canonical"
@@ -149,6 +149,15 @@
       .footer-bottom-p {
         font-weight: 500 !important;
       }
+      .navbar-mobile a {
+        color: #000 !important;
+      }
+      .navbar-mobile li {
+        text-align: left;
+        background: #fbfbfb;
+        padding-left: 15px;
+        margin-bottom: 5px;
+      }
     </style>
 
     <!-- Custom styles for this template -->
@@ -171,11 +180,10 @@
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarsExample08"
-          aria-controls="navbarsExample08"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample"
+          role="button"
+          aria-controls="offcanvasExample"
         >
           <span class="navbar-toggler-icon"
             ><img class="menu-ico" src="./assets/img/menu.png"
@@ -227,7 +235,54 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> 
+
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <a class="nav-link d-none-desktop" href="#"
+          ><img class="mobile-logo" src="./assets//img/logo.png"
+        /></a>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav navbar-mobile">
+          <li class="">
+            <a class="nav-link" href="#">HOME</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">ABOUT US</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">CURRICULUM</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">STUDENT LIFE</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">ADMISSIONS</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">GIVING</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">PARENTS</a>
+          </li>
+          <li class="">
+            <a class="nav-link" href="#">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <footer class="linear-gradient footer-bg">
       <!-- <div class="bottombar-green text-center"></div> -->
       <div class="row">
