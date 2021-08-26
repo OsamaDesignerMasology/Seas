@@ -22,8 +22,93 @@
       rel="stylesheet"
       href="./font-awesome-4.7.0/css/font-awesome.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
+      .carousel-inner.vertical > .item {
+        -webkit-transition: 0.1s ease-in-out bottom;
+        -moz-transition: 0.1s ease-in-out bottom;
+        -o-transition: 0.1s ease-in-out bottom;
+        transition: 0.1s ease-in-out bottom;
+      }
+      @media all and (transform-3d), (-webkit-transform-3d) {
+        .carousel-inner.vertical > .item {
+          -webkit-transition: -webkit-transform 0.6s ease-in-out;
+          -moz-transition: -webkit-transform 0.6s ease-in-out;
+          -o-transition: -o-transform 0.6s ease-in-out;
+          transition: transform 0.6s ease-in-out;
+          -webkit-backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -webkit-perspective: 1000;
+          -moz-perspective: 1000;
+        }
+        .carousel-inner.vertical > .item.next,
+        .carousel-inner.vertical > .item.active.right {
+          -webkit-transform: translate3d(0, 33.33%, 0);
+          -moz-transform: translate3d(0, 33.33%, 0);
+          transform: translate3d(0, 33.33%, 0);
+          top: 0px;
+        }
+        .carousel-inner.vertical > .item.prev,
+        .carousel-inner.vertical > .item.active.left {
+          -webkit-transform: translate3d(0, -33.33%, 0);
+          -moz-transform: translate3d(0, -33.33%, 0);
+          transform: translate3d(0, -33.33%, 0);
+          top: 0px;
+        }
+        .carousel-inner.vertical > .item.next.left,
+        .carousel-inner.vertical > .item.prev.right,
+        .carousel-inner.vertical > .item.active {
+          -webkit-transform: translate3d(0, 0, 0);
+          -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          top: 0px;
+        }
+      }
+      .carousel-inner.vertical > .next,
+      .carousel-inner.vertical > .prev {
+        height: 100%;
+        width: auto;
+      }
+      #carousel-pager .carousel-control.left,
+      #carousel-pager .carousel-control.right {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 1;
+        position: absolute;
+        top: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #carousel-pager .carousel-control.right {
+        top: unset;
+        bottom: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .left .glyphicon,
+      .right .glyphicon {
+        position: absolute;
+        top: 13px;
+        left: 16px;
+        color: #004c70;
+      }
+      .right .glyphicon {
+        top: 16px;
+        left: 15px;
+      }
+      .item img {
+        border: 1px solid #e2e2e2;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px;
+      }
+      .carousel {
+        margin-top: 80px;
+      }
       html {
         overflow-x: hidden;
       }
@@ -158,6 +243,190 @@
         padding-left: 15px;
         margin-bottom: 5px;
       }
+      .bg-black {
+        background: #000 !important;
+      }
+      .bg-white {
+        background: #fff !important;
+      }
+      .table-area {
+        padding: 50px 100px;
+      }
+      .calendar-date {
+        font-size: 1.5rem;
+        font-weight: 200;
+      }
+      .calendar-hr {
+        height: 8px !important;
+        background: #dedede;
+      }
+      .home-calendar td {
+        text-align: center;
+        padding: 15px;
+      }
+      .calendar-td-head {
+        color: #06337f;
+        font-weight: 500;
+        padding-bottom: 15px !important;
+      }
+      .disable {
+        color: #dedede;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .event {
+        background: #00a566;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 30px;
+        width: 45px;
+        height: 45px;
+        padding-top: 6px;
+        cursor: pointer;
+        border: 4px solid #d9f2e8;
+      }
+      .home-calendar p {
+        margin-bottom: 0px !important;
+        margin: auto;
+      }
+      .calendar-white {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .calendar-black {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .year-select {
+        width: auto;
+        /* background: none !important; */
+        border: none;
+        color: #00a566;
+        background-image: url(./assets/img/arrow.png) 0 0 no-repeat;
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+      }
+      #select-category {
+        font-size: 0.9rem;
+        padding: 10px;
+        color: #00a566;
+        border: none;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='34' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 40px;
+        padding-right: 15px;
+        background-position-y: 5px;
+      }
+
+      .carousel-inner.vertical > .item {
+        -webkit-transition: 0.1s ease-in-out bottom;
+        -moz-transition: 0.1s ease-in-out bottom;
+        -o-transition: 0.1s ease-in-out bottom;
+        transition: 0.1s ease-in-out bottom;
+      }
+      @media all and (transform-3d), (-webkit-transform-3d) {
+        .carousel-inner.vertical > .item {
+          -webkit-transition: -webkit-transform 0.6s ease-in-out;
+          -moz-transition: -webkit-transform 0.6s ease-in-out;
+          -o-transition: -o-transform 0.6s ease-in-out;
+          transition: transform 0.6s ease-in-out;
+          -webkit-backface-visibility: hidden;
+          -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+          -webkit-perspective: 1000;
+          -moz-perspective: 1000;
+        }
+        .carousel-inner.vertical > .item.next,
+        .carousel-inner.vertical > .item.active.right {
+          -webkit-transform: translate3d(0, 33.33%, 0);
+          -moz-transform: translate3d(0, 33.33%, 0);
+          transform: translate3d(0, 33.33%, 0);
+          top: 0px;
+        }
+        .carousel-inner.vertical > .item.prev,
+        .carousel-inner.vertical > .item.active.left {
+          -webkit-transform: translate3d(0, -33.33%, 0);
+          -moz-transform: translate3d(0, -33.33%, 0);
+          transform: translate3d(0, -33.33%, 0);
+          top: 0px;
+        }
+        .carousel-inner.vertical > .item.next.left,
+        .carousel-inner.vertical > .item.prev.right,
+        .carousel-inner.vertical > .item.active {
+          -webkit-transform: translate3d(0, 0, 0);
+          -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          top: 0px;
+        }
+      }
+      .carousel-inner.vertical > .next,
+      .carousel-inner.vertical > .prev {
+        height: 100%;
+        width: auto;
+      }
+      #carousel-pager .carousel-control.left,
+      #carousel-pager .carousel-control.right {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 1;
+        position: absolute;
+        top: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #carousel-pager .carousel-control.right {
+        top: unset;
+        bottom: -65px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .left .glyphicon,
+      .right .glyphicon {
+        position: absolute;
+        top: 13px;
+        left: 16px;
+        color: #004c70;
+      }
+      .right .glyphicon {
+        top: 16px;
+        left: 15px;
+      }
+      .item img {
+        border: 1px solid #e2e2e2;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px;
+      }
+      .carousel {
+        margin-top: 80px;
+      }
+      .month-ul li {
+        list-style-type: none;
+        padding: 10px;
+        padding-right: 40px;
+      }
+      .month-ul li a{ 
+        color:#cbcfd0;
+      }
+      .month-active{ 
+        background-color:#fff;
+        border-left: 5px solid #00a566;
+      }
+      .month-active a {
+        color:#000 !important;
+        font-weight: bold;
+      }
     </style>
 
     <!-- Custom styles for this template -->
@@ -235,7 +504,7 @@
           </ul>
         </div>
       </div>
-    </nav> 
+    </nav>
 
     <div
       class="offcanvas offcanvas-start"
@@ -283,6 +552,118 @@
         </ul>
       </div>
     </div>
+    <div class="row mt-5 mb-5">
+      <div class="col col-12">
+        <div class="container">
+          <div class="row">
+            <div class="col p-0 col-lg-3 col-12 calendar-white bg-black">
+              <select class="mt-4" id="select-category">
+                <option selected>2021</option>
+                <option value="1">2020</option>
+                <option value="2">2019</option>
+                <option value="3">2018</option>
+                <option value="3">2017</option>
+                <option value="3">2016</option>
+                <option value="3">2015</option>
+                <option value="3">2014</option>
+                <option value="3">2013</option>
+              </select> 
+              <div>
+                <ul class="month-ul text-end p-0">
+                  <li><a href="#">January</a></li>
+                  <li><a href="#">Febuary</a></li>
+                  <li><a href="#">March</a></li>
+                  <li class="month-active"><a href="#">April</a></li>
+                  <li><a href="#">May</a></li>
+                  <li><a href="#">June</a></li>
+                  <li><a href="#">July</a></li>
+                  <li><a href="#">August</a></li>
+                  <li><a href="#">September</a></li>
+                  <li><a href="#">October</a></li>
+                  <li><a href="#">November</a></li>
+                  <li><a href="#">December</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col col-lg-9 col-12 calendar-black bg-white">
+              <div class="table-area">
+                <p class="calendar-date">July 11, 2021 | Friday</p>
+                <hr class="calendar-hr" />
+                <table class="w-100 home-calendar">
+                  <thead>
+                    <td class="calendar-td-head">Sun</td>
+                    <td class="calendar-td-head">Mon</td>
+                    <td class="calendar-td-head">Tue</td>
+                    <td class="calendar-td-head">Wed</td>
+                    <td class="calendar-td-head">Thu</td>
+                    <td class="calendar-td-head">Fri</td>
+                    <td class="calendar-td-head">Sat</td>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><p>1</p></td>
+                      <td><p>2</p></td>
+                      <td><p class="bold">3</p></td>
+                      <td><p class="bold">4</p></td>
+                      <td><p class="bold">5</p></td>
+                      <td><p>6</p></td>
+                      <td><p>7</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>8</p></td>
+                      <td><p>9</p></td>
+                      <td><p>10</p></td>
+                      <td><p>11</p></td>
+                      <td><p>12</p></td>
+                      <td><p class="event">13</p></td>
+                      <a
+                        href="#"
+                        title="Header"
+                        data-toggle="popover"
+                        data-placement="top"
+                        data-content="Content"
+                        >Top</a
+                      >
+                      <td><p>14</p></td>
+                    </tr>
+                    <tr>
+                      <td><p class="disable">15</p></td>
+                      <td><p class="disable">16</p></td>
+                      <td><p class="disable">17</p></td>
+                      <td><p class="disable">18</p></td>
+                      <td><p class="disable">19</p></td>
+                      <td><p>20</p></td>
+                      <td><p>21</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>22</p></td>
+                      <td><p>23</p></td>
+                      <td><p>24</p></td>
+                      <td><p>25</p></td>
+                      <td><p>26</p></td>
+                      <td><p>27</p></td>
+                      <td><p>28</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>29</p></td>
+                      <a
+                        href="#"
+                        data-toggle="popover"
+                        title="Popover Header"
+                        data-content="Some content inside the popover"
+                        >Toggle popover</a
+                      >
+                      <td><p>30</p></td>
+                      <td><p>31</p></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
     <footer class="linear-gradient footer-bg">
       <!-- <div class="bottombar-green text-center"></div> -->
       <div class="row">
@@ -371,8 +752,7 @@
           </div>
         </div>
       </div>
-    </footer>
-
+    </footer>   
     <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
